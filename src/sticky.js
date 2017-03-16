@@ -169,20 +169,20 @@ class Sticky {
 
     element.sticky.rect = this.getRectangle(element);
     element.sticky.container.rect = this.getRectangle(element.sticky.container);
-
-    if (
-      ((element.sticky.rect.top + element.sticky.rect.height) < (element.sticky.container.rect.top + element.sticky.container.rect.height))
-      && (element.sticky.stickyFor < this.vp.width)
-      && !element.sticky.active
-    ) {
+    //
+    // if (
+    //   ((element.sticky.rect.top + element.sticky.rect.height) < (element.sticky.container.rect.top + element.sticky.container.rect.height))
+    //   && (element.sticky.stickyFor < this.vp.width)
+    //   && !element.sticky.active
+    // ) {
       element.sticky.active = true;
-    } else if (
-      ((element.sticky.rect.top + element.sticky.rect.height) >= (element.sticky.container.rect.top + element.sticky.container.rect.height))
-      || element.sticky.stickyFor >= this.vp.width
-      && element.sticky.active
-    ) {
-      element.sticky.active = false;
-    }
+    // } else if (
+    //   ((element.sticky.rect.top + element.sticky.rect.height) >= (element.sticky.container.rect.top + element.sticky.container.rect.height))
+    //   || element.sticky.stickyFor >= this.vp.width
+    //   && element.sticky.active
+    // ) {
+    //   element.sticky.active = false;
+    // }
 
     this.setPosition(element);
    }
@@ -231,9 +231,9 @@ class Sticky {
    setPosition(element) {
     this.css(element, { position: '', width: '', top: '', left: '' });
 
-    if ((this.vp.height < element.sticky.rect.height) || !element.sticky.active) {
-      return;
-    }
+    // if ((this.vp.height < element.sticky.rect.height) || !element.sticky.active) {
+    //   return;
+    // }
 
     if (!element.sticky.rect.width) {
       element.sticky.rect = this.getRectangle(element);
